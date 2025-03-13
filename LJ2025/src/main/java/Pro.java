@@ -30,8 +30,8 @@ public class Pro {
         String username = System.getenv("LINKEDIN_USER"); // Use environment variable
         String password = System.getenv("LINKEDIN_PASS"); // Use environment variable
 
-        driver.findElement(By.id("username")).sendKeys("ronypaul13@gmail.com");
-        driver.findElement(By.id("password")).sendKeys("Rmpass@1997");
+        driver.findElement(By.id("username")).sendKeys("@gmail.com");
+        driver.findElement(By.id("password")).sendKeys("***********");
         driver.findElement(By.cssSelector("button[aria-label='Sign in']")).click();
 
         // Search for "Tester" jobs
