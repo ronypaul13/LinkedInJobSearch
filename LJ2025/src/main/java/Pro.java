@@ -17,7 +17,7 @@ public class Pro {
     	System.setProperty("webdriver.chrome.driver", "C:/Users/ronyp/OneDrive/Documents/chromedriver-win64/chromedriver-win64/chromedriver.exe");
 		WebDriver driver =  new ChromeDriver();
         
-        // Set implicit wait (reduce to 10s)
+        // Set implicit wait (reduce to 10s) update as per your connectivity
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         
         // Navigate to LinkedIn
@@ -34,14 +34,14 @@ public class Pro {
         driver.findElement(By.id("password")).sendKeys("*********");
         driver.findElement(By.cssSelector("button[aria-label='Sign in']")).click();
 
-        // Search for "Tester" jobs
+        // Search for "Tester" jobs, change as per your job requirement
         WebElement searchBox = driver.findElement(By.xpath("//input[@placeholder='Search']"));
         searchBox.sendKeys("Tester" + Keys.ENTER);
         
         // Click on Jobs tab
         driver.findElement(By.xpath("//button[normalize-space()='Jobs']")).click();
         
-        // Click on filter dropdown
+        // Click on filter dropdown for date posted
         driver.findElement(By.id("searchFilter_timePostedRange")).click();
         
         // Explicit wait for "Past 24 hours" filter option
@@ -57,13 +57,13 @@ public class Pro {
         act.moveToElement(button).click().build().perform();
         //driver.findElement(By.tagName("span.artdeco-button__text"));
         
-        // Locate the <ul> element
+        // Locate the list element 
         WebElement ulElement = driver.findElement(By.className("ozZCVvtCJUyqiogEVmaNpCidpQJkHwRfc")); 
 
-        // Get all <li> elements inside the <ul>
+        // Get all elements inside the list
         List<WebElement> liElements = ulElement.findElements(By.tagName("li"));
 
-        // Loop through each <li> and print the text
+        // Loop through each <li> and print the text in the output
         for (WebElement li : liElements) {
             System.out.println(li.getText());
             System.out.println("----------------");
