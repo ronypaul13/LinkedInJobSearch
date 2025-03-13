@@ -49,7 +49,6 @@ public class Pro {
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[@for='timePostedRange-r86400']")));
         element.click();
         
-        Thread.sleep(500)
         WebElement button = driver.findElement(By.xpath("//button[@class='artdeco-button artdeco-button--2 artdeco-button--primary ember-view ml2']"));
         Actions act = new Actions(driver);
         // Corrected button locator
